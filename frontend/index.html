@@ -1,0 +1,93 @@
+<div class="app" id="app">
+
+  <aside class="sidebar" id="sidebar">
+    <div class="side-top">
+      <div class="brand"><span class="logo">S</span><span class="brand-name">StudyBuddy</span></div>
+      <button class="icon-btn dark" id="collapseBtn" title="Hide sidebar" type="button">
+        <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M9 4v16"/></svg>
+      </button>
+    </div>
+
+    <button class="new-chat" id="newChat" type="button">
+      <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>New chat
+    </button>
+
+    <div class="search">
+      <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <input id="searchChats" type="text" placeholder="Search chats">
+    </div>
+
+    <nav class="history" id="history"></nav>
+
+    <div class="side-foot">
+      <div class="avatar">S</div>
+      <div class="who"><b>Student</b><span>Learning space</span></div>
+      <button class="icon-btn dark" id="clearAll" title="Clear all chats" type="button">
+        <svg viewBox="0 0 24 24"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2l1-12M9 7V4h6v3"/></svg>
+      </button>
+    </div>
+  </aside>
+  <div class="scrim" id="scrim"></div>
+
+  <main class="main">
+    <header class="topbar">
+      <button class="icon-btn" id="menuBtn" title="Show sidebar" type="button">
+        <svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <span class="chat-title" id="chatTitle">New chat</span>
+    </header>
+
+    <section class="messages" id="messages">
+      <div class="welcome" id="welcome">
+        <div class="logo big">S</div>
+        <h1>What are you studying today?</h1>
+        <p>Ask a question and get an answer with sources, or turn any topic into a quiz.</p>
+      </div>
+    </section>
+
+    <div class="composer-wrap">
+      <div class="popover" id="modePop" hidden>
+        <div class="pop-head">Answer style</div>
+        <button type="button" data-mode="simple" class="opt active"><b>Simple</b><span>Short and clear</span></button>
+        <button type="button" data-mode="detailed" class="opt"><b>Detailed</b><span>In-depth explanation</span></button>
+        <button type="button" data-mode="steps" class="opt"><b>Step by step</b><span>Broken into steps</span></button>
+        <button type="button" data-mode="beginner" class="opt"><b>Beginner</b><span>No jargon, with examples</span></button>
+      </div>
+
+      <div class="popover quiz-pop" id="quizPop" hidden>
+        <div class="pop-head">Create a quiz</div>
+        <div class="topic-hint" id="topicHint"></div>
+        <label class="field-label">Difficulty</label>
+        <div class="segment" id="diffSeg">
+          <button type="button" data-d="easy">Easy</button>
+          <button type="button" data-d="medium" class="active">Medium</button>
+          <button type="button" data-d="hard">Hard</button>
+        </div>
+        <label class="field-label">Number of questions</label>
+        <div class="stepper">
+          <button type="button" id="qMinus" aria-label="Fewer">−</button>
+          <span id="qCount">5</span>
+          <button type="button" id="qPlus" aria-label="More">+</button>
+        </div>
+        <button type="button" class="primary" id="makeQuiz">Generate quiz</button>
+      </div>
+
+      <div class="composer">
+        <textarea id="input" rows="1" placeholder="Ask a question…"></textarea>
+        <div class="tools">
+          <button type="button" class="chip" id="modeBtn">
+            <svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h10M4 18h6"/></svg>
+            <span id="modeLabel">Simple</span>
+          </button>
+          <button type="button" class="chip" id="quizBtn">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.6 2.2c-.7.4-1.1.9-1.1 1.8M12 17v.01"/></svg>Quiz
+          </button>
+          <button type="button" class="send" id="send" aria-label="Send" disabled>
+            <svg viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
